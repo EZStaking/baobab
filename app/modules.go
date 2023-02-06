@@ -1,16 +1,13 @@
 package app
 
 import (
-	"github.com/CosmWasm/token-factory/x/tokenfactory"
-	tokenfactorytypes "github.com/CosmWasm/token-factory/x/tokenfactory/types"
 	"github.com/CosmWasm/wasmd/x/wasm"
 	encparams "github.com/CosmosContracts/juno/v13/app/params"
-	feeshare "github.com/CosmosContracts/juno/v13/x/feeshare"
-	feesharetypes "github.com/CosmosContracts/juno/v13/x/feeshare/types"
 	"github.com/CosmosContracts/juno/v13/x/mint"
 	minttypes "github.com/CosmosContracts/juno/v13/x/mint/types"
-	"github.com/CosmosContracts/juno/v13/x/oracle"
-	oracletypes "github.com/CosmosContracts/juno/v13/x/oracle/types"
+
+	// "github.com/CosmosContracts/juno/v13/x/oracle"
+	// oracletypes "github.com/CosmosContracts/juno/v13/x/oracle/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	"github.com/cosmos/cosmos-sdk/x/auth"
 	authsims "github.com/cosmos/cosmos-sdk/x/auth/simulation"
@@ -43,20 +40,17 @@ import (
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	"github.com/cosmos/cosmos-sdk/x/upgrade"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
-	ica "github.com/cosmos/ibc-go/v4/modules/apps/27-interchain-accounts"
-	icatypes "github.com/cosmos/ibc-go/v4/modules/apps/27-interchain-accounts/types"
-	ibcfee "github.com/cosmos/ibc-go/v4/modules/apps/29-fee"
-	ibcfeetypes "github.com/cosmos/ibc-go/v4/modules/apps/29-fee/types"
-	transfer "github.com/cosmos/ibc-go/v4/modules/apps/transfer"
-	ibctransfertypes "github.com/cosmos/ibc-go/v4/modules/apps/transfer/types"
-	ibc "github.com/cosmos/ibc-go/v4/modules/core"
-	ibchost "github.com/cosmos/ibc-go/v4/modules/core/24-host"
-	intertx "github.com/cosmos/interchain-accounts/x/inter-tx"
-	intertxtypes "github.com/cosmos/interchain-accounts/x/inter-tx/types"
+	ica "github.com/cosmos/ibc-go/v3/modules/apps/27-interchain-accounts"
+	icatypes "github.com/cosmos/ibc-go/v3/modules/apps/27-interchain-accounts/types"
+	transfer "github.com/cosmos/ibc-go/v3/modules/apps/transfer"
+	ibctransfertypes "github.com/cosmos/ibc-go/v3/modules/apps/transfer/types"
+	ibc "github.com/cosmos/ibc-go/v3/modules/core"
+	ibchost "github.com/cosmos/ibc-go/v3/modules/core/24-host"
+
+	// intertx "github.com/cosmos/interchain-accounts/x/inter-tx"
+	// intertxtypes "github.com/cosmos/interchain-accounts/x/inter-tx/types"
 	ibchooks "github.com/osmosis-labs/osmosis/x/ibc-hooks"
 	ibchookstypes "github.com/osmosis-labs/osmosis/x/ibc-hooks/types"
-	packetforward "github.com/strangelove-ventures/packet-forward-middleware/v4/router"
-	packetforwardtypes "github.com/strangelove-ventures/packet-forward-middleware/v4/router/types"
 )
 
 // module account permissions
@@ -69,10 +63,7 @@ var maccPerms = map[string][]string{
 	govtypes.ModuleName:            {authtypes.Burner},
 	ibctransfertypes.ModuleName:    {authtypes.Minter, authtypes.Burner},
 	icatypes.ModuleName:            nil,
-	ibcfeetypes.ModuleName:         nil,
 	wasm.ModuleName:                {authtypes.Burner},
-	oracletypes.ModuleName:         nil,
-	tokenfactorytypes.ModuleName:   {authtypes.Minter, authtypes.Burner},
 }
 
 // ModuleBasics defines the module BasicManager is in charge of setting up basic,
@@ -91,22 +82,18 @@ var ModuleBasics = module.NewBasicManager(
 	crisis.AppModuleBasic{},
 	slashing.AppModuleBasic{},
 	ibc.AppModuleBasic{},
-	ibcfee.AppModuleBasic{},
 	feegrantmodule.AppModuleBasic{},
 	upgrade.AppModuleBasic{},
 	evidence.AppModuleBasic{},
 	transfer.AppModuleBasic{},
 	vesting.AppModuleBasic{},
 	authzmodule.AppModuleBasic{},
-	oracle.AppModuleBasic{},
-	tokenfactory.AppModuleBasic{},
+	// oracle.AppModuleBasic{},
 	wasm.AppModuleBasic{},
 	ica.AppModuleBasic{},
-	intertx.AppModuleBasic{},
-	tokenfactory.AppModuleBasic{},
-	feeshare.AppModuleBasic{},
+	// intertx.AppModuleBasic{},
+	// tokenfactory.AppModuleBasic{},
 	ibchooks.AppModuleBasic{},
-	packetforward.AppModuleBasic{},
 )
 
 func appModules(
@@ -138,15 +125,11 @@ func appModules(
 		params.NewAppModule(app.ParamsKeeper),
 		authzmodule.NewAppModule(appCodec, app.AuthzKeeper, app.AccountKeeper, app.BankKeeper, app.interfaceRegistry),
 		transfer.NewAppModule(app.TransferKeeper),
-		ibcfee.NewAppModule(app.IBCFeeKeeper),
-		tokenfactory.NewAppModule(app.TokenFactoryKeeper, app.AccountKeeper, app.BankKeeper),
-		feeshare.NewAppModule(app.FeeShareKeeper, app.AccountKeeper),
 		wasm.NewAppModule(appCodec, &app.WasmKeeper, app.StakingKeeper, app.AccountKeeper, app.BankKeeper),
 		ica.NewAppModule(&app.ICAControllerKeeper, &app.ICAHostKeeper),
-		intertx.NewAppModule(appCodec, app.InterTxKeeper),
-		oracle.NewAppModule(appCodec, app.OracleKeeper, app.AccountKeeper, app.BankKeeper),
+		// intertx.NewAppModule(appCodec, app.InterTxKeeper),
+		// oracle.NewAppModule(appCodec, app.OracleKeeper, app.AccountKeeper, app.BankKeeper),
 		ibchooks.NewAppModule(app.AccountKeeper),
-		packetforward.NewAppModule(app.PacketForwardKeeper),
 	}
 }
 
@@ -172,12 +155,9 @@ func simulationModules(
 		slashing.NewAppModule(appCodec, app.SlashingKeeper, app.AccountKeeper, app.BankKeeper, app.StakingKeeper),
 		params.NewAppModule(app.ParamsKeeper),
 		evidence.NewAppModule(app.EvidenceKeeper),
-		oracle.NewAppModule(appCodec, app.OracleKeeper, app.AccountKeeper, app.BankKeeper),
 		wasm.NewAppModule(appCodec, &app.WasmKeeper, app.StakingKeeper, app.AccountKeeper, app.BankKeeper),
 		ibc.NewAppModule(app.IBCKeeper),
 		transfer.NewAppModule(app.TransferKeeper),
-		feeshare.NewAppModule(app.FeeShareKeeper, app.AccountKeeper),
-		ibcfee.NewAppModule(app.IBCFeeKeeper),
 	}
 }
 
@@ -205,12 +185,8 @@ func orderBeginBlockers() []string {
 		ibchost.ModuleName,
 		ibctransfertypes.ModuleName,
 		icatypes.ModuleName,
-		packetforwardtypes.ModuleName,
-		intertxtypes.ModuleName,
-		ibcfeetypes.ModuleName,
-		oracletypes.ModuleName,
-		tokenfactorytypes.ModuleName,
-		feesharetypes.ModuleName,
+		// intertxtypes.ModuleName,
+		// oracletypes.ModuleName,
 		wasm.ModuleName,
 		ibchookstypes.ModuleName,
 	}
@@ -238,12 +214,8 @@ func orderEndBlockers() []string {
 		ibchost.ModuleName,
 		ibctransfertypes.ModuleName,
 		icatypes.ModuleName,
-		packetforwardtypes.ModuleName,
-		intertxtypes.ModuleName,
-		ibcfeetypes.ModuleName,
-		oracletypes.ModuleName,
-		tokenfactorytypes.ModuleName,
-		feesharetypes.ModuleName,
+		// intertxtypes.ModuleName,
+		// oracletypes.ModuleName,
 		wasm.ModuleName,
 		ibchookstypes.ModuleName,
 	}
@@ -271,12 +243,9 @@ func orderInitBlockers() []string {
 		ibchost.ModuleName,
 		ibctransfertypes.ModuleName,
 		icatypes.ModuleName,
-		packetforwardtypes.ModuleName,
-		oracletypes.ModuleName,
-		intertxtypes.ModuleName,
-		ibcfeetypes.ModuleName,
-		tokenfactorytypes.ModuleName,
-		feesharetypes.ModuleName,
+		// oracletypes.ModuleName,
+		// intertxtypes.ModuleName,
+
 		wasm.ModuleName,
 		ibchookstypes.ModuleName,
 	}

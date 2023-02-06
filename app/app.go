@@ -35,7 +35,7 @@ import (
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	upgradeclient "github.com/cosmos/cosmos-sdk/x/upgrade/client"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
-	ibcclientclient "github.com/cosmos/ibc-go/v4/modules/core/02-client/client"
+	ibcclientclient "github.com/cosmos/ibc-go/v3/modules/core/02-client/client"
 	"github.com/spf13/cast"
 	abci "github.com/tendermint/tendermint/abci/types"
 	tmjson "github.com/tendermint/tendermint/libs/json"
@@ -55,7 +55,7 @@ import (
 	v11 "github.com/CosmosContracts/juno/v13/app/upgrades/v11"
 	v12 "github.com/CosmosContracts/juno/v13/app/upgrades/v12"
 	v13 "github.com/CosmosContracts/juno/v13/app/upgrades/v13"
-	oracleclient "github.com/CosmosContracts/juno/v13/x/oracle/client"
+	// oracleclient "github.com/CosmosContracts/juno/v13/x/oracle/client"
 )
 
 const (
@@ -170,9 +170,9 @@ func getGovProposalHandlers() []govclient.ProposalHandler {
 		upgradeclient.CancelProposalHandler,
 		ibcclientclient.UpdateClientProposalHandler,
 		ibcclientclient.UpgradeProposalHandler,
-		oracleclient.ProposalHandlerAddTrackingPriceHistory,
-		oracleclient.ProposalHandlerAddTrackingPriceHistoryWithWhitelist,
-		oracleclient.ProposalRemoveTrackingPriceHistory,
+		// oracleclient.ProposalHandlerAddTrackingPriceHistory,
+		// oracleclient.ProposalHandlerAddTrackingPriceHistoryWithWhitelist,
+		// oracleclient.ProposalRemoveTrackingPriceHistory,
 	)
 
 	return govProposalHandlers
@@ -304,8 +304,6 @@ func New(
 
 			GovKeeper:         app.GovKeeper,
 			IBCKeeper:         app.IBCKeeper,
-			FeeShareKeeper:    app.FeeShareKeeper,
-			BankKeeperFork:    app.BankKeeper, // since we need extra methods
 			TxCounterStoreKey: app.GetKey(wasm.StoreKey),
 			WasmConfig:        wasmConfig,
 			Cdc:               appCodec,

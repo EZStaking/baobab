@@ -70,7 +70,7 @@ require (
 	github.com/cosmos/gogoproto v1.4.4 // indirect
 	github.com/cosmos/gorocksdb v1.2.0 // indirect
 	github.com/cosmos/iavl v0.19.5 // indirect
-	github.com/cosmos/ibc-go/v4 v4.3.0 // indirect
+	github.com/cosmos/ibc-go/v3 v4.3.0 // indirect
 	github.com/cosmos/interchain-accounts v0.2.5 // indirect
 	github.com/cosmos/ledger-cosmos-go v0.12.2 // indirect
 	github.com/creachadair/taskgroup v0.3.2 // indirect
