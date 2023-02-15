@@ -17,7 +17,7 @@ builds:
     env:
       - CGO_ENABLED=0
     ldflags:
-      - -s -w -X main.commit={{.Commit}} -X main.date={{ .CommitDate }} -X github.com/CosmosContracts/juno/price-feeder/cmd.Version={{ replace .Version "price-feeder/" "price-feeder-" }} -X github.com/CosmosContracts/juno/price-feeder/cmd.Commit={{ .Commit }}
+      - -s -w -X main.commit={{.Commit}} -X main.date={{ .CommitDate }} -X github.com/EZStaking/baobab/price-feeder/cmd.Version={{ replace .Version "price-feeder/" "price-feeder-" }} -X github.com/EZStaking/baobab/price-feeder/cmd.Commit={{ .Commit }}
     goos:
       - darwin
       - linux

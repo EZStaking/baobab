@@ -107,7 +107,7 @@ prefix = "juno"
 
 [keyring]
 backend = "test"
-dir = "~/.juno"
+dir = "~/.baobab"
 
 [rpc]
 grpc_endpoint = "localhost:9090"

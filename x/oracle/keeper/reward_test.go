@@ -3,7 +3,7 @@ package keeper_test
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/CosmosContracts/juno/v13/x/oracle/types"
+	"github.com/EZStaking/baobab/v13/x/oracle/types"
 )
 
 // Test the reward giving mechanism
@@ -15,7 +15,7 @@ func (s *IntegrationTestSuite) TestRewardBallotWinners() {
 	}
 
 	// Prepare reward pool
-	givingAmt := sdk.NewCoins(sdk.NewInt64Coin(types.JunoDenom, 30000000))
+	givingAmt := sdk.NewCoins(sdk.NewInt64Coin(types.Baobabdenom, 30000000))
 	err := s.app.BankKeeper.MintCoins(s.ctx, "mint", givingAmt)
 	s.Require().NoError(err)
 	err = s.app.BankKeeper.SendCoinsFromModuleToModule(s.ctx, "mint", "oracle", givingAmt)
@@ -33,8 +33,8 @@ func (s *IntegrationTestSuite) TestRewardBallotWinners() {
 	s.app.OracleKeeper.RewardBallotWinners(s.ctx, (int64)(s.app.OracleKeeper.VotePeriod(s.ctx)), (int64)(s.app.OracleKeeper.RewardDistributionWindow(s.ctx)), voteTargets, claims)
 	outstandingRewardsDec := s.app.DistrKeeper.GetValidatorOutstandingRewardsCoins(s.ctx, valAddr)
 	outstandingRewards, _ := outstandingRewardsDec.TruncateDecimal()
-	s.Require().Equal(sdk.NewDecFromInt(givingAmt.AmountOf(types.JunoDenom)).QuoInt64(votePeriodsPerWindow).QuoInt64(3).TruncateInt(),
-		outstandingRewards.AmountOf(types.JunoDenom))
+	s.Require().Equal(sdk.NewDecFromInt(givingAmt.AmountOf(types.Baobabdenom)).QuoInt64(votePeriodsPerWindow).QuoInt64(3).TruncateInt(),
+		outstandingRewards.AmountOf(types.Baobabdenom))
 }
 
 func (s *IntegrationTestSuite) TestRewardBallotWinnersZeroPower() {

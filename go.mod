@@ -1,4 +1,4 @@
-module github.com/CosmosContracts/juno/v13
+module github.com/EZStaking/baobab/v13
 
 go 1.19
 

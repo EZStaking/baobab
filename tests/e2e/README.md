@@ -124,7 +124,7 @@ The `upgrade` package starts chain initialization. In addition, there is
 a Dockerfile `init-e2e.Dockerfile`. When executed, its container
 produces all files necessary for starting up a new chain. These
 resulting files can be mounted on a volume and propagated to our
-production juno container to start the `junod` service.
+production juno container to start the `baobabd` service.
 
 The decoupling between chain initialization and start-up allows to
 minimize the differences between our test suite and the production

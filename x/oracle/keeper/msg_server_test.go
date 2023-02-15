@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/CosmosContracts/juno/v13/x/oracle/types"
+	"github.com/EZStaking/baobab/v13/x/oracle/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 )
@@ -29,7 +29,7 @@ func GenerateSalt(length int) (string, error) {
 func (s *IntegrationTestSuite) TestMsgServer_AggregateExchangeRatePrevote() {
 	ctx := s.ctx
 
-	exchangeRatesStr := "123.2:ujuno"
+	exchangeRatesStr := "123.2:ubaobab"
 	salt, err := GenerateSalt(32)
 	s.Require().NoError(err)
 	hash := types.GetAggregateVoteHash(salt, exchangeRatesStr, valAddr)
@@ -68,8 +68,8 @@ func (s *IntegrationTestSuite) TestMsgServer_AggregateExchangeRatePrevote() {
 func (s *IntegrationTestSuite) TestMsgServer_AggregateExchangeRateVote() {
 	ctx := s.ctx
 
-	ratesStr := "ujuno:123.2"
-	ratesStrInvalidCoin := "ujuno:123.2,badcoin:234.5"
+	ratesStr := "ubaobab:123.2"
+	ratesStrInvalidCoin := "ubaobab:123.2,badcoin:234.5"
 	salt, err := GenerateSalt(32)
 	s.Require().NoError(err)
 	hash := types.GetAggregateVoteHash(salt, ratesStr, valAddr)

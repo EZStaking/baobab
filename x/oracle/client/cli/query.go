@@ -10,8 +10,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/spf13/cobra"
 
-	"github.com/CosmosContracts/juno/v13/x/oracle/types"
-	"github.com/CosmosContracts/juno/v13/x/oracle/util"
+	"github.com/EZStaking/baobab/v13/x/oracle/types"
+	"github.com/EZStaking/baobab/v13/x/oracle/util"
 )
 
 // GetQueryCmd returns the CLI query commands for the x/oracle module.
@@ -75,11 +75,11 @@ func GetCmdQueryAggregateVote() *cobra.Command {
 		Long: strings.TrimSpace(`
 Query outstanding oracle aggregate vote.
 
-$ junod query oracle aggregate-votes
+$ baobabd query oracle aggregate-votes
 
 Or, you can filter with voter address
 
-$ junod query oracle aggregate-votes junovaloper...
+$ baobabd query oracle aggregate-votes junovaloper...
 `),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			clientCtx, err := client.GetClientQueryContext(cmd)
@@ -117,11 +117,11 @@ func GetCmdQueryAggregatePrevote() *cobra.Command {
 		Long: strings.TrimSpace(`
 Query outstanding oracle aggregate prevotes.
 
-$ junod query oracle aggregate-prevotes
+$ baobabd query oracle aggregate-prevotes
 
 Or, can filter with voter address
 
-$ junod query oracle aggregate-prevotes junovaloper...
+$ baobabd query oracle aggregate-prevotes junovaloper...
 `),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			clientCtx, err := client.GetClientQueryContext(cmd)
@@ -159,7 +159,7 @@ func GetCmdQueryExchangeRates() *cobra.Command {
 Query the current exchange rates of assets based on USD.
 You can find the current list of active denoms by running
 
-$ junod query oracle exchange-rates
+$ baobabd query oracle exchange-rates
 `),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			clientCtx, err := client.GetClientQueryContext(cmd)
@@ -186,7 +186,7 @@ func GetCmdQueryExchangeRate() *cobra.Command {
 		Long: strings.TrimSpace(`
 Query the current exchange rates of an asset based on USD.
 
-$ junod query oracle exchange-rate ATOM
+$ baobabd query oracle exchange-rate ATOM
 `),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			clientCtx, err := client.GetClientQueryContext(cmd)
@@ -374,7 +374,7 @@ func GetCmdQueryTwapPrice() *cobra.Command {
 		Long: strings.TrimSpace(
 			`Query twap for pool. Start and end time must be in RFC3339 format.
 Example:
-$ junod q oracle twap JUNO 2022-12-25T19:42:07.100Z 2022-12-25T20:42:07.100Z
+$ baobabd q oracle twap JUNO 2022-12-25T19:42:07.100Z 2022-12-25T20:42:07.100Z
 `),
 		Args: cobra.ExactArgs(3),
 		RunE: func(cmd *cobra.Command, args []string) error {

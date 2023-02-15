@@ -30,9 +30,9 @@ RUN sha256sum /lib/libwasmvm_muslc.x86_64.a | grep 6e4de7ba9bad4ae9679c7f9ecf7e2
 RUN cp /lib/libwasmvm_muslc.$(uname -m).a /lib/libwasmvm_muslc.a
 
 # force it to use static lib (from above) not standard libgo_cosmwasm.so file
-# then log output of file /code/bin/junod
+# then log output of file /code/bin/baobabd
 # then ensure static linking
-RUN E2E_SCRIPT_NAME=${E2E_SCRIPT_NAME} BUILD_TAGS=muslc LINK_STATICALLY=true make build-e2e-script 
+RUN E2E_SCRIPT_NAME=${E2E_SCRIPT_NAME} BUILD_TAGS=muslc LINK_STATICALLY=true make build-e2e-script
 
 # --------------------------------------------------------
 FROM ubuntu

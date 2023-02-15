@@ -19,12 +19,12 @@ import (
 	"golang.org/x/sync/errgroup"
 	"golang.org/x/term"
 
-	"github.com/CosmosContracts/juno/price-feeder/config"
-	"github.com/CosmosContracts/juno/price-feeder/oracle"
-	"github.com/CosmosContracts/juno/price-feeder/oracle/client"
-	"github.com/CosmosContracts/juno/price-feeder/oracle/provider"
-	v1 "github.com/CosmosContracts/juno/price-feeder/router/v1"
-	"github.com/CosmosContracts/juno/v13/app"
+	"github.com/EZStaking/baobab/price-feeder/config"
+	"github.com/EZStaking/baobab/price-feeder/oracle"
+	"github.com/EZStaking/baobab/price-feeder/oracle/client"
+	"github.com/EZStaking/baobab/price-feeder/oracle/provider"
+	v1 "github.com/EZStaking/baobab/price-feeder/router/v1"
+	"github.com/EZStaking/baobab/v13/app"
 	"github.com/cosmos/cosmos-sdk/telemetry"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )

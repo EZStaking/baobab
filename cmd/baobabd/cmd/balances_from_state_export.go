@@ -15,7 +15,7 @@ import (
 	tmjson "github.com/tendermint/tendermint/libs/json"
 	tmtypes "github.com/tendermint/tendermint/types"
 
-	appparams "github.com/CosmosContracts/juno/v13/app/params"
+	appparams "github.com/EZStaking/baobab/v13/app/params"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/server"
 	sdk "github.com/cosmos/cosmos-sdk/types"
@@ -86,7 +86,7 @@ func ExportDeriveBalancesCmd() *cobra.Command {
 		Short: "Export a derive balances from a provided genesis export",
 		Long: `Export a derive balances from a provided genesis export
 Example:
-	junod export-derive-balances ../genesis.json ../snapshot.json
+	baobabd export-derive-balances ../genesis.json ../snapshot.json
 `,
 		Args: cobra.ExactArgs(2),
 		RunE: func(cmd *cobra.Command, args []string) error {
@@ -203,7 +203,7 @@ func StakedToCSVCmd() *cobra.Command {
 		Short: "Export a airdrop csv from a provided balances export",
 		Long: `Export a airdrop csv from a provided balances export (from export-derive-balances)
 Example:
-	junod staked-to-csv ../balances.json ../airdrop.csv
+	baobabd staked-to-csv ../balances.json ../airdrop.csv
 `,
 		Args: cobra.ExactArgs(2),
 		RunE: func(cmd *cobra.Command, args []string) error {

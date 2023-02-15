@@ -19,7 +19,7 @@ import (
 	"github.com/gogo/protobuf/proto"
 	tmjson "github.com/tendermint/tendermint/libs/json"
 
-	"github.com/CosmosContracts/juno/v13/tests/e2e/util"
+	"github.com/EZStaking/baobab/v13/tests/e2e/util"
 )
 
 // NodeConfig is a confiuration for the node supplied from the test runner
@@ -38,7 +38,7 @@ type NodeConfig struct {
 
 const (
 	// common
-	BaseDenom           = "ujuno"
+	BaseDenom           = "ubaobab"
 	StakeDenom          = "stake"
 	MinGasPrice         = "0.000"
 	IbcSendAmount       = 3300000000
@@ -66,7 +66,7 @@ var (
 
 	InitBalanceStrA = fmt.Sprintf("%d%s,%d%s", JunoBalanceA, BaseDenom, StakeBalanceA, StakeDenom)
 	InitBalanceStrB = fmt.Sprintf("%d%s,%d%s", JunoBalanceB, BaseDenom, StakeBalanceB, StakeDenom)
-	JunoToken       = sdk.NewInt64Coin(BaseDenom, IbcSendAmount)  // 3,300ujuno
+	JunoToken       = sdk.NewInt64Coin(BaseDenom, IbcSendAmount)  // 3,300ubaobab
 	StakeToken      = sdk.NewInt64Coin(StakeDenom, IbcSendAmount) // 3,300ustake
 	tenM            = sdk.Coins{sdk.NewInt64Coin(BaseDenom, 10_000_000)}
 )
@@ -224,7 +224,7 @@ func initGenesis(chain *internalChain, votingPeriod time.Duration, forkHeight in
 		return err
 	}
 
-	cost, _ := sdk.ParseCoinsNormalized("1000000ujuno,10000000stake")
+	cost, _ := sdk.ParseCoinsNormalized("1000000ubaobab,10000000stake")
 	err = updateModuleGenesis(appGenState, tokenfactorytypes.ModuleName, &tokenfactorytypes.GenesisState{}, updateTokenFactoryGenesis(cost))
 	if err != nil {
 		return err

@@ -10,9 +10,9 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/rs/zerolog"
 
-	"github.com/CosmosContracts/juno/price-feeder/config"
-	"github.com/CosmosContracts/juno/price-feeder/pkg/httputil"
-	"github.com/CosmosContracts/juno/price-feeder/router/middleware"
+	"github.com/EZStaking/baobab/price-feeder/config"
+	"github.com/EZStaking/baobab/price-feeder/pkg/httputil"
+	"github.com/EZStaking/baobab/price-feeder/router/middleware"
 )
 
 const (

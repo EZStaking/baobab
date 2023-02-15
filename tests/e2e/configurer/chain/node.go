@@ -12,8 +12,8 @@ import (
 	rpchttp "github.com/tendermint/tendermint/rpc/client/http"
 	coretypes "github.com/tendermint/tendermint/rpc/core/types"
 
-	"github.com/CosmosContracts/juno/v13/tests/e2e/containers"
-	"github.com/CosmosContracts/juno/v13/tests/e2e/initialization"
+	"github.com/EZStaking/baobab/v13/tests/e2e/containers"
+	"github.com/EZStaking/baobab/v13/tests/e2e/initialization"
 )
 
 type NodeConfig struct {
@@ -125,7 +125,7 @@ func (n *NodeConfig) extractOperatorAddressIfValidator() error {
 		return nil
 	}
 
-	cmd := []string{"junod", "debug", "addr", n.PublicKey}
+	cmd := []string{"baobabd", "debug", "addr", n.PublicKey}
 	n.t.Logf("extracting validator operator addresses for validator: %s", n.Name)
 	_, errBuf, err := n.containerManager.ExecCmd(n.t, n.Name, cmd, "")
 	if err != nil {

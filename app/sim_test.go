@@ -97,7 +97,7 @@ func TestFullAppSimulation(t *testing.T) {
 	updateAppSimulationFlag(true)
 	app := New(logger, db, nil, true, map[int64]bool{}, t.TempDir(), simapp.FlagPeriodValue, encConf,
 		wasm.EnableAllProposals, simapp.EmptyAppOptions{}, nil, fauxMerkleModeOpt)
-	require.Equal(t, "juno", app.Name())
+	require.Equal(t, "baobab", app.Name())
 
 	// run randomized simulation
 	_, simParams, simErr := simulation.SimulateFromSeed(

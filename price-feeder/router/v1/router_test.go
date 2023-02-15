@@ -12,10 +12,10 @@ import (
 	"github.com/rs/zerolog"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/CosmosContracts/juno/price-feeder/config"
-	"github.com/CosmosContracts/juno/price-feeder/oracle"
-	"github.com/CosmosContracts/juno/price-feeder/oracle/provider"
-	v1 "github.com/CosmosContracts/juno/price-feeder/router/v1"
+	"github.com/EZStaking/baobab/price-feeder/config"
+	"github.com/EZStaking/baobab/price-feeder/oracle"
+	"github.com/EZStaking/baobab/price-feeder/oracle/provider"
+	v1 "github.com/EZStaking/baobab/price-feeder/router/v1"
 	"github.com/cosmos/cosmos-sdk/telemetry"
 )
 

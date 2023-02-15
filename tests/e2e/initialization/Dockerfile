@@ -29,17 +29,17 @@ RUN sha256sum /lib/libwasmvm_muslc.x86_64.a | grep 6e4de7ba9bad4ae9679c7f9ecf7e2
 RUN cp "/lib/libwasmvm_muslc.$(uname -m).a" /lib/libwasmvm_muslc.a
 
 # force it to use static lib (from above) not standard libgo_cosmwasm.so file
-# then log output of file /code/bin/junod
+# then log output of file /code/bin/baobabd
 # then ensure static linking
 RUN LEDGER_ENABLED=false BUILD_TAGS=muslc LINK_STATICALLY=true make build \
-  && file /code/bin/junod \
+  && file /code/bin/baobabd \
   && echo "Ensuring binary is statically linked ..." \
-  && (file /code/bin/junod | grep "statically linked")
+  && (file /code/bin/baobabd | grep "statically linked")
 
 # --------------------------------------------------------
 FROM alpine:3.15
 
-COPY --from=go-builder /code/bin/junod /bin/junod
+COPY --from=go-builder /code/bin/baobabd /bin/baobabd
 ENV HOME /juno
 WORKDIR $HOME
 
@@ -52,4 +52,4 @@ EXPOSE 26657
 #grpc
 EXPOSE 9090
 
-ENTRYPOINT ["junod"]
+ENTRYPOINT ["baobabd"]

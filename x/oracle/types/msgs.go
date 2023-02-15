@@ -5,7 +5,7 @@ import (
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/tendermint/tendermint/crypto/tmhash"
 
-	"github.com/CosmosContracts/juno/v13/x/oracle/util"
+	"github.com/EZStaking/baobab/v13/x/oracle/util"
 )
 
 var (

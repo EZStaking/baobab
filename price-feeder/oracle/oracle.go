@@ -17,12 +17,12 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	"github.com/CosmosContracts/juno/price-feeder/config"
-	"github.com/CosmosContracts/juno/price-feeder/oracle/client"
-	"github.com/CosmosContracts/juno/price-feeder/oracle/provider"
-	"github.com/CosmosContracts/juno/price-feeder/oracle/types"
-	pfsync "github.com/CosmosContracts/juno/price-feeder/pkg/sync"
-	oracletypes "github.com/CosmosContracts/juno/v13/x/oracle/types"
+	"github.com/EZStaking/baobab/price-feeder/config"
+	"github.com/EZStaking/baobab/price-feeder/oracle/client"
+	"github.com/EZStaking/baobab/price-feeder/oracle/provider"
+	"github.com/EZStaking/baobab/price-feeder/oracle/types"
+	pfsync "github.com/EZStaking/baobab/price-feeder/pkg/sync"
+	oracletypes "github.com/EZStaking/baobab/v13/x/oracle/types"
 	"github.com/cosmos/cosmos-sdk/telemetry"
 )
 

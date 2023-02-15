@@ -34,11 +34,11 @@ import (
 	"github.com/CosmWasm/wasmd/x/wasm"
 	wasmkeeper "github.com/CosmWasm/wasmd/x/wasm/keeper"
 	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"
-	"github.com/CosmosContracts/juno/v13/app"
-	"github.com/CosmosContracts/juno/v13/app/params"
+	"github.com/EZStaking/baobab/v13/app"
+	"github.com/EZStaking/baobab/v13/app/params"
 )
 
-// NewRootCmd creates a new root command for junod. It is called once in the
+// NewRootCmd creates a new root command for baobabd. It is called once in the
 // main function.
 func NewRootCmd() (*cobra.Command, params.EncodingConfig) {
 	encodingConfig := app.MakeEncodingConfig()
@@ -63,7 +63,7 @@ func NewRootCmd() (*cobra.Command, params.EncodingConfig) {
 
 	rootCmd := &cobra.Command{
 		Use:   version.AppName,
-		Short: "Juno Smart Contract Zone",
+		Short: "Baobab Development Zone",
 		PersistentPreRunE: func(cmd *cobra.Command, _ []string) error {
 			// set the default command outputs
 			cmd.SetOut(cmd.OutOrStdout())

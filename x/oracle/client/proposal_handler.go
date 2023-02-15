@@ -1,8 +1,8 @@
 package client
 
 import (
-	"github.com/CosmosContracts/juno/v13/x/oracle/client/cli"
-	"github.com/CosmosContracts/juno/v13/x/oracle/client/rest"
+	"github.com/EZStaking/baobab/v13/x/oracle/client/cli"
+	"github.com/EZStaking/baobab/v13/x/oracle/client/rest"
 	govclient "github.com/cosmos/cosmos-sdk/x/gov/client"
 )
 

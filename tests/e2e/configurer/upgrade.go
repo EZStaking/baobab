@@ -9,11 +9,11 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	appparams "github.com/CosmosContracts/juno/v13/app/params"
-	"github.com/CosmosContracts/juno/v13/tests/e2e/configurer/chain"
-	"github.com/CosmosContracts/juno/v13/tests/e2e/configurer/config"
-	"github.com/CosmosContracts/juno/v13/tests/e2e/containers"
-	"github.com/CosmosContracts/juno/v13/tests/e2e/initialization"
+	appparams "github.com/EZStaking/baobab/v13/app/params"
+	"github.com/EZStaking/baobab/v13/tests/e2e/configurer/chain"
+	"github.com/EZStaking/baobab/v13/tests/e2e/configurer/config"
+	"github.com/EZStaking/baobab/v13/tests/e2e/containers"
+	"github.com/EZStaking/baobab/v13/tests/e2e/initialization"
 )
 
 type UpgradeSettings struct {

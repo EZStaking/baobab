@@ -18,11 +18,11 @@ import (
 
 	tokenfactorytypes "github.com/CosmWasm/token-factory/x/tokenfactory/types"
 
-	"github.com/CosmosContracts/juno/v13/tests/e2e/util"
+	"github.com/EZStaking/baobab/v13/tests/e2e/util"
 )
 
 func (n *NodeConfig) QueryExchangeRates() (string, error) {
-	cmd := []string{"junod", "q", "oracle", "exchange-rates"}
+	cmd := []string{"baobabd", "q", "oracle", "exchange-rates"}
 	out, _, err := n.containerManager.ExecCmd(n.t, n.Name, cmd, "")
 	if err != nil {
 		return "", err

@@ -36,7 +36,7 @@ var (
 	DefaultRewardBand    = sdk.NewDecWithPrec(2, 2)  // 2% (-1, 1)
 	DefaultWhitelist     = DenomList{
 		{
-			BaseDenom:   JunoDenom,
+			BaseDenom:   Baobabdenom,
 			SymbolDenom: JunoSymbol,
 			Exponent:    JunoExponent,
 		},

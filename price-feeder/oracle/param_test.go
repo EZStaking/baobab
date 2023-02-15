@@ -3,7 +3,7 @@ package oracle
 import (
 	"testing"
 
-	oracletypes "github.com/CosmosContracts/juno/v13/x/oracle/types"
+	oracletypes "github.com/EZStaking/baobab/v13/x/oracle/types"
 	"github.com/stretchr/testify/require"
 )
 

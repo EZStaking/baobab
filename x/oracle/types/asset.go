@@ -3,11 +3,11 @@ package types
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	appparams "github.com/CosmosContracts/juno/v13/app/params"
+	appparams "github.com/EZStaking/baobab/v13/app/params"
 )
 
 const (
-	JunoDenom       string = appparams.BondDenom
+	Baobabdenom       string = appparams.BondDenom
 	JunoSymbol      string = "JUNO"
 	JunoExponent           = uint32(6)
 	AtomDenom       string = "ibc/C4CFF46FD6DE35CA4CF4CE031E643C8FDC9BA4B99AE598E9B0ED98FE3A2319F9"

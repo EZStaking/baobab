@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/CosmosContracts/juno/price-feeder/cmd"
+	"github.com/EZStaking/baobab/price-feeder/cmd"
 )
 
 func main() {

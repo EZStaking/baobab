@@ -9,7 +9,7 @@ This document contains the roadmap for the Juno project. It is a living document
 
 - [Notion Plan Page](https://fluffy-conifer-309.notion.site/123261ebfe2040d9ac559f7e7d3c5cd2?v=6d59a04765f543738676f8db21ae8525)
 
-- [V13 Tracking Issue](https://github.com/CosmosContracts/juno/issues/475)
+- [V13 Tracking Issue](https://github.com/EZStaking/baobab/issues/475)
 
 This update will focus more on upgrading the base layer of the Juno stack, bringing new features and pushing us to the latest versions of the software.
 
@@ -21,7 +21,7 @@ This update will focus more on upgrading the base layer of the Juno stack, bring
 - [Native Liquid Staking](https://github.com/iqlusioninc/liquidity-staking-module)
 - IBCTest (optional)
 - Faster Block times (with respect to oracle)
-- [Improving the Nakamoto Coefficient](https://github.com/CosmosContracts/juno/issues/474)
+- [Improving the Nakamoto Coefficient](https://github.com/EZStaking/baobab/issues/474)
 
 ---
 
@@ -33,22 +33,22 @@ Links:
 
 - [Notion Plan Page](https://fluffy-conifer-309.notion.site/123261ebfe2040d9ac559f7e7d3c5cd2?v=6d59a04765f543738676f8db21ae8525)
 
-- [3 Tracking Issue](https://github.com/CosmosContracts/juno/issues/268)
+- [3 Tracking Issue](https://github.com/EZStaking/baobab/issues/268)
 
 The V13 update is Juno's largest update, bringing many new features for developers, users, and relayers.
 
 ### V13 PRs
 
-- [x/FeeShare (CosmWasm)](https://github.com/CosmosContracts/juno/pull/385)
-- [x/TokenFactory](https://github.com/CosmosContracts/juno/pull/368)
-- [x/Oracle](https://github.com/CosmosContracts/juno/pull/329)
-- [x/GlobalFee](https://github.com/CosmosContracts/juno/pull/411)
-- [x/inter-tx](https://github.com/CosmosContracts/juno/pull/215)
-- [More ICA Messages](https://github.com/CosmosContracts/juno/pull/436/files)
-- [Governance Spam Prevention](https://github.com/CosmosContracts/juno/pull/394)
-- [x/wasmd 30](https://github.com/CosmosContracts/juno/pull/387)
-- [x/ibc V4](https://github.com/CosmosContracts/juno/pull/387)
-- [x/ibc-fees](https://github.com/CosmosContracts/juno/pull/432)
+- [x/FeeShare (CosmWasm)](https://github.com/EZStaking/baobab/pull/385)
+- [x/TokenFactory](https://github.com/EZStaking/baobab/pull/368)
+- [x/Oracle](https://github.com/EZStaking/baobab/pull/329)
+- [x/GlobalFee](https://github.com/EZStaking/baobab/pull/411)
+- [x/inter-tx](https://github.com/EZStaking/baobab/pull/215)
+- [More ICA Messages](https://github.com/EZStaking/baobab/pull/436/files)
+- [Governance Spam Prevention](https://github.com/EZStaking/baobab/pull/394)
+- [x/wasmd 30](https://github.com/EZStaking/baobab/pull/387)
+- [x/ibc V4](https://github.com/EZStaking/baobab/pull/387)
+- [x/ibc-fees](https://github.com/EZStaking/baobab/pull/432)
 
 V13 is targeted at developers with relayer and user experience improvements as well.
 
@@ -62,4 +62,4 @@ Governance can now also deny and allow IBC-based denominations (tokens) via **Gl
 
 Speaking of relayers, **IBCFees** now helps to fund those who relayer your packets! In the above paragraph, we mention how IBC transfers are feeless for relayers. Fees can still be sent with these packets and bring some income for relayers, thus maintaining public goods infrastructure. The relayers still have to pay the fee on the other chain's token, but this is a positive step in the right direction for variables we can control.
 
-Juno is now a controller chain via **inter-tx**, which will allow it to control accounts on other chains. [HERE](https://github.com/CosmosContracts/juno/pull/436/files).
+Juno is now a controller chain via **inter-tx**, which will allow it to control accounts on other chains. [HERE](https://github.com/EZStaking/baobab/pull/436/files).

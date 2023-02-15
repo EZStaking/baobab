@@ -3,8 +3,8 @@ package main
 import (
 	"os"
 
-	"github.com/CosmosContracts/juno/v13/app"
-	"github.com/CosmosContracts/juno/v13/cmd/junod/cmd"
+	"github.com/EZStaking/baobab/v13/app"
+	"github.com/EZStaking/baobab/v13/cmd/baobabd/cmd"
 	"github.com/cosmos/cosmos-sdk/server"
 
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"

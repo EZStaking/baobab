@@ -17,10 +17,10 @@ import (
 	"github.com/spf13/cobra"
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/CosmosContracts/juno/v13/x/oracle/client/cli"
-	"github.com/CosmosContracts/juno/v13/x/oracle/keeper"
-	"github.com/CosmosContracts/juno/v13/x/oracle/simulation"
-	"github.com/CosmosContracts/juno/v13/x/oracle/types"
+	"github.com/EZStaking/baobab/v13/x/oracle/client/cli"
+	"github.com/EZStaking/baobab/v13/x/oracle/keeper"
+	"github.com/EZStaking/baobab/v13/x/oracle/simulation"
+	"github.com/EZStaking/baobab/v13/x/oracle/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 )
 

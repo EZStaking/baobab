@@ -21,10 +21,10 @@ import (
 	tmrand "github.com/tendermint/tendermint/libs/rand"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
-	junoApp "github.com/CosmosContracts/juno/v13/app"
-	appparams "github.com/CosmosContracts/juno/v13/app/params"
-	"github.com/CosmosContracts/juno/v13/x/oracle/keeper"
-	"github.com/CosmosContracts/juno/v13/x/oracle/types"
+	junoApp "github.com/EZStaking/baobab/v13/app"
+	appparams "github.com/EZStaking/baobab/v13/app/params"
+	"github.com/EZStaking/baobab/v13/x/oracle/keeper"
+	"github.com/EZStaking/baobab/v13/x/oracle/types"
 )
 
 const (
@@ -106,7 +106,7 @@ var (
 func NewTestMsgCreateValidator(address sdk.ValAddress, pubKey cryptotypes.PubKey, amt sdk.Int) *stakingtypes.MsgCreateValidator {
 	commission := stakingtypes.NewCommissionRates(sdk.ZeroDec(), sdk.ZeroDec(), sdk.ZeroDec())
 	msg, _ := stakingtypes.NewMsgCreateValidator(
-		address, pubKey, sdk.NewCoin(types.JunoDenom, amt),
+		address, pubKey, sdk.NewCoin(types.Baobabdenom, amt),
 		stakingtypes.Description{}, commission, sdk.OneInt(),
 	)
 

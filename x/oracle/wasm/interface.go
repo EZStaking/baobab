@@ -5,7 +5,7 @@ import (
 
 	wasmvmtypes "github.com/CosmWasm/wasmvm/types"
 
-	"github.com/CosmosContracts/juno/v13/x/oracle/keeper"
+	"github.com/EZStaking/baobab/v13/x/oracle/keeper"
 )
 
 // ExchangeRateQueryParams query request params for exchange rates

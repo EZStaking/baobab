@@ -8,7 +8,7 @@ assignees: ''
 
 #### Specifications
 
-Juno version: `Junod version`
+Juno version: `Baobabd version`
 OS & Version: Windows/Linux/OSX
 Commit hash: 
 

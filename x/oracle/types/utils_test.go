@@ -21,7 +21,7 @@ var (
 	_ stakingtypes.ValidatorI = MockValidator{}
 
 	DenomJuno = Denom{
-		BaseDenom:   JunoDenom,
+		BaseDenom:   Baobabdenom,
 		SymbolDenom: JunoSymbol,
 		Exponent:    6,
 	}

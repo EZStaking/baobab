@@ -23,9 +23,9 @@ endif
 ##                              Build / Install                              ##
 ###############################################################################
 
-ldflags = -X github.com/CosmosContracts/juno/price-feeder/cmd.Version=$(VERSION) \
-		  -X github.com/CosmosContracts/juno/price-feeder/cmd.Commit=$(COMMIT) \
-		  -X github.com/CosmosContracts/juno/price-feeder/cmd.SDKVersion=$(SDK_VERSION)
+ldflags = -X github.com/EZStaking/baobab/price-feeder/cmd.Version=$(VERSION) \
+		  -X github.com/EZStaking/baobab/price-feeder/cmd.Commit=$(COMMIT) \
+		  -X github.com/EZStaking/baobab/price-feeder/cmd.SDKVersion=$(SDK_VERSION)
 
 ifeq ($(LINK_STATICALLY),true)
 	ldflags += -linkmode=external -extldflags "-Wl,-z,muldefs -static"
@@ -43,7 +43,7 @@ install: go.sum
 	@echo "--> Installing..."
 	go install -mod=readonly $(BUILD_FLAGS) ./...
 
-tidy:	
+tidy:
 	go mod tidy
 
 .PHONY: build install

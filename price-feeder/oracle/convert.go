@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/CosmosContracts/juno/price-feeder/config"
-	"github.com/CosmosContracts/juno/price-feeder/oracle/provider"
-	"github.com/CosmosContracts/juno/price-feeder/oracle/types"
+	"github.com/EZStaking/baobab/price-feeder/config"
+	"github.com/EZStaking/baobab/price-feeder/oracle/provider"
+	"github.com/EZStaking/baobab/price-feeder/oracle/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/rs/zerolog"
 )

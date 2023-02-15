@@ -3,7 +3,7 @@ package keeper
 import (
 	"testing"
 
-	"github.com/CosmosContracts/juno/v13/x/oracle/types"
+	"github.com/EZStaking/baobab/v13/x/oracle/types"
 	"github.com/stretchr/testify/require"
 )
 
@@ -21,7 +21,7 @@ func TestAddTrackingPriceHistoryProposal(t *testing.T) {
 
 	trackingList := types.DenomList{
 		{
-			BaseDenom:   types.JunoDenom,
+			BaseDenom:   types.Baobabdenom,
 			SymbolDenom: types.JunoSymbol,
 			Exponent:    types.JunoExponent,
 		}, // Already in Whitelist (Default params)
@@ -60,7 +60,7 @@ func TestAddTrackingPriceHistoryWithWhitelistProposal(t *testing.T) {
 
 	trackingList := types.DenomList{
 		{
-			BaseDenom:   types.JunoDenom,
+			BaseDenom:   types.Baobabdenom,
 			SymbolDenom: types.JunoSymbol,
 			Exponent:    types.JunoExponent,
 		},
@@ -98,7 +98,7 @@ func TestRemoveTrackingPriceHistoryProposal(t *testing.T) {
 
 	trackingList := types.DenomList{
 		{
-			BaseDenom:   types.JunoDenom,
+			BaseDenom:   types.Baobabdenom,
 			SymbolDenom: types.JunoSymbol,
 			Exponent:    types.JunoExponent,
 		},

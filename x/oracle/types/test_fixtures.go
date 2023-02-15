@@ -5,7 +5,7 @@ func AddTrackingPriceHistoryProposalFixture(
 ) *AddTrackingPriceHistoryProposal {
 	trackingList := DenomList{
 		{
-			BaseDenom:   JunoDenom,
+			BaseDenom:   Baobabdenom,
 			SymbolDenom: JunoSymbol,
 			Exponent:    JunoExponent,
 		},
@@ -34,7 +34,7 @@ func AddTrackingPriceHistoryWithWhitelistProposalFixture(
 ) *AddTrackingPriceHistoryWithWhitelistProposal {
 	trackingList := DenomList{
 		{
-			BaseDenom:   JunoDenom,
+			BaseDenom:   Baobabdenom,
 			SymbolDenom: JunoSymbol,
 			Exponent:    JunoExponent,
 		},
@@ -63,7 +63,7 @@ func RemoveTrackingPriceHistoryProposalFixture(
 ) *RemoveTrackingPriceHistoryProposal {
 	removeTwapList := DenomList{
 		{
-			BaseDenom:   JunoDenom,
+			BaseDenom:   Baobabdenom,
 			SymbolDenom: JunoSymbol,
 			Exponent:    JunoExponent,
 		},

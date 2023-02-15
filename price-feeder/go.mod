@@ -1,9 +1,9 @@
-module github.com/CosmosContracts/juno/price-feeder
+module github.com/EZStaking/baobab/price-feeder
 
 go 1.20
 
 require (
-	github.com/CosmosContracts/juno/v13 v13.0.0
+	github.com/EZStaking/baobab/v13 v13.0.0
 	github.com/armon/go-metrics v0.4.1
 	github.com/cosmos/cosmos-sdk v0.45.12
 	github.com/go-playground/validator/v10 v10.11.1
@@ -284,7 +284,7 @@ require (
 )
 
 replace (
-	github.com/CosmosContracts/juno/v13 => ../
+	github.com/EZStaking/baobab/v13 => ../
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.2-alpha.regen.4
 	github.com/tendermint/tendermint => github.com/informalsystems/tendermint v0.34.25
 )

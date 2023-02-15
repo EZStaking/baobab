@@ -8,9 +8,9 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	"github.com/CosmosContracts/juno/v13/app"
-	"github.com/CosmosContracts/juno/v13/x/feeshare"
-	"github.com/CosmosContracts/juno/v13/x/feeshare/types"
+	"github.com/EZStaking/baobab/v13/app"
+	"github.com/EZStaking/baobab/v13/x/feeshare"
+	"github.com/EZStaking/baobab/v13/x/feeshare/types"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 )
 
@@ -54,7 +54,7 @@ func (suite *GenesisTestSuite) TestFeeShareInitGenesis() {
 				Params: types.Params{
 					EnableFeeShare:  false,
 					DeveloperShares: types.DefaultDeveloperShares,
-					AllowedDenoms:   []string{"ujuno"},
+					AllowedDenoms:   []string{"ubaobab"},
 				},
 			},
 			false,
@@ -65,7 +65,7 @@ func (suite *GenesisTestSuite) TestFeeShareInitGenesis() {
 				Params: types.Params{
 					EnableFeeShare:  true,
 					DeveloperShares: sdk.NewDecWithPrec(0, 2),
-					AllowedDenoms:   []string{"ujuno"},
+					AllowedDenoms:   []string{"ubaobab"},
 				},
 			},
 			false,
@@ -76,7 +76,7 @@ func (suite *GenesisTestSuite) TestFeeShareInitGenesis() {
 				Params: types.Params{
 					EnableFeeShare:  true,
 					DeveloperShares: sdk.NewDecWithPrec(100, 2),
-					AllowedDenoms:   []string{"ujuno"},
+					AllowedDenoms:   []string{"ubaobab"},
 				},
 			},
 			false,

@@ -9,7 +9,7 @@ import (
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/hlog"
 
-	"github.com/CosmosContracts/juno/price-feeder/config"
+	"github.com/EZStaking/baobab/price-feeder/config"
 )
 
 func Build(logger zerolog.Logger, cfg config.Config) alice.Chain {

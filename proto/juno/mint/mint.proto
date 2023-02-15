@@ -4,7 +4,7 @@ package juno.mint;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/CosmosContracts/juno/x/mint/types";
+option go_package = "github.com/EZStaking/baobab/x/mint/types";
 
 // Minter represents the minting state.
 message Minter {

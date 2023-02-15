@@ -5,17 +5,17 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/CosmosContracts/juno/v13/x/oracle/types"
-	"github.com/CosmosContracts/juno/v13/x/oracle/util"
+	"github.com/EZStaking/baobab/v13/x/oracle/types"
+	"github.com/EZStaking/baobab/v13/x/oracle/util"
 )
 
-// prependJunoIfUnique pushs `ujuno` denom to the front of the list, if it is not yet included.
+// prependJunoIfUnique pushs `ubaobab` denom to the front of the list, if it is not yet included.
 func prependJunoIfUnique(voteTargets []string) []string {
-	if util.Contains(types.JunoDenom, voteTargets) {
+	if util.Contains(types.Baobabdenom, voteTargets) {
 		return voteTargets
 	}
 	rewardDenoms := make([]string, len(voteTargets)+1)
-	rewardDenoms[0] = types.JunoDenom
+	rewardDenoms[0] = types.Baobabdenom
 	copy(rewardDenoms[1:], voteTargets)
 	return rewardDenoms
 }

@@ -3,7 +3,7 @@ package keeper_test
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/CosmosContracts/juno/v13/x/oracle/types"
+	"github.com/EZStaking/baobab/v13/x/oracle/types"
 )
 
 func (s *IntegrationTestSuite) TestBallot_OrganizeBallotByDenom() {
@@ -19,7 +19,7 @@ func (s *IntegrationTestSuite) TestBallot_OrganizeBallotByDenom() {
 		s.ctx, valAddr, types.AggregateExchangeRateVote{
 			ExchangeRateTuples: types.ExchangeRateTuples{
 				types.ExchangeRateTuple{
-					Denom:        "ujuno",
+					Denom:        "ubaobab",
 					ExchangeRate: sdk.OneDec(),
 				},
 			},
@@ -36,8 +36,8 @@ func (s *IntegrationTestSuite) TestBallot_OrganizeBallotByDenom() {
 	res = s.app.OracleKeeper.OrganizeBallotByDenom(s.ctx, claimMap)
 	require.Equal([]types.BallotDenom{
 		{
-			Ballot: types.ExchangeRateBallot{types.NewVoteForTally(sdk.OneDec(), "ujuno", valAddr, 1)},
-			Denom:  "ujuno",
+			Ballot: types.ExchangeRateBallot{types.NewVoteForTally(sdk.OneDec(), "ubaobab", valAddr, 1)},
+			Denom:  "ubaobab",
 		},
 	}, res)
 }
@@ -55,7 +55,7 @@ func (s *IntegrationTestSuite) TestBallot_ClearBallots() {
 
 	var tuples types.ExchangeRateTuples
 	tuples = append(tuples, types.ExchangeRateTuple{
-		Denom:        "ujuno",
+		Denom:        "ubaobab",
 		ExchangeRate: sdk.ZeroDec(),
 	})
 	vote := types.AggregateExchangeRateVote{

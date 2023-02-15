@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/CosmosContracts/juno/price-feeder/oracle/provider"
+	"github.com/EZStaking/baobab/price-feeder/oracle/provider"
 	"github.com/cosmos/cosmos-sdk/telemetry"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/go-playground/validator/v10"

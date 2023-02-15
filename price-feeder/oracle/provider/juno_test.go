@@ -5,7 +5,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/CosmosContracts/juno/price-feeder/oracle/types"
+	"github.com/EZStaking/baobab/price-feeder/oracle/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 )
@@ -22,7 +22,7 @@ func TestJunoProvider_GetTickerPrices(t *testing.T) {
 					"JUNO": {
 					"date": "2022-11-02 18:57:36",
 					"price": 2.93,
-					"denom": "ujuno"
+					"denom": "ubaobab"
 					},
 					"AKT": {
 					"date": "2022-11-02 18:57:36",
@@ -81,7 +81,7 @@ func TestJunoProvider_GetTickerPrices(t *testing.T) {
 					"JUNO": {
 					"date": "2022-11-02 18:57:36",
 					"price": 2.93,
-					"denom": "ujuno"
+					"denom": "ubaobab"
 					},
 					"AKT": {
 					"date": "2022-11-02 18:57:36",
@@ -112,7 +112,7 @@ func TestJunoProvider_GetTickerPrices(t *testing.T) {
 				}
 				`
 			} else if req.URL.String() == "/volumes/tokens/ARTO/current" { //nolint:goconst
-				resp = ` 
+				resp = `
 				{
 					"date": "2022-11-07",
 					"volumes": 0
@@ -161,7 +161,7 @@ func TestJunoProvider_GetTickerPrices(t *testing.T) {
 					"JUNO": {
 					"date": "2022-11-02 18:57:36",
 					"price": 2.93,
-					"denom": "ujuno"
+					"denom": "ubaobab"
 					},
 					"AKT": {
 					"date": "2022-11-02 18:57:36",

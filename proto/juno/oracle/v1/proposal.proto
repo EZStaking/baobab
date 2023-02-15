@@ -4,7 +4,7 @@ package juno.oracle.v1;
 import "gogoproto/gogo.proto";
 import "juno/oracle/v1/oracle.proto";
 
-option go_package = "github.com/CosmosContracts/juno/x/oracle/types";
+option go_package = "github.com/EZStaking/baobab/x/oracle/types";
 option (gogoproto.goproto_stringer_all) = false;
 option (gogoproto.goproto_getters_all) = false;
 option (gogoproto.equal_all) = true;

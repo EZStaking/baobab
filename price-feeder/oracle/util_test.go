@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/CosmosContracts/juno/price-feeder/oracle"
-	"github.com/CosmosContracts/juno/price-feeder/oracle/provider"
-	"github.com/CosmosContracts/juno/price-feeder/oracle/types"
+	"github.com/EZStaking/baobab/price-feeder/oracle"
+	"github.com/EZStaking/baobab/price-feeder/oracle/provider"
+	"github.com/EZStaking/baobab/price-feeder/oracle/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 )

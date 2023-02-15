@@ -3,7 +3,7 @@ package v1
 import (
 	"time"
 
-	"github.com/CosmosContracts/juno/price-feeder/oracle"
+	"github.com/EZStaking/baobab/price-feeder/oracle"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

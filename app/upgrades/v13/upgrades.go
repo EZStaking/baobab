@@ -2,9 +2,9 @@ package v13
 
 import (
 	"fmt"
-	"strings"
+// 	"strings"
 
-	"github.com/CosmosContracts/juno/v13/app/keepers"
+	"github.com/EZStaking/baobab/v13/app/keepers"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
@@ -17,20 +17,20 @@ import (
 
 	// types
 	tokenfactorytypes "github.com/CosmWasm/token-factory/x/tokenfactory/types"
-	feesharetypes "github.com/CosmosContracts/juno/v13/x/feeshare/types"
-	oracletypes "github.com/CosmosContracts/juno/v13/x/oracle/types"
+	feesharetypes "github.com/EZStaking/baobab/v13/x/feeshare/types"
+	oracletypes "github.com/EZStaking/baobab/v13/x/oracle/types"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
 	ibcfeetypes "github.com/cosmos/ibc-go/v4/modules/apps/29-fee/types"
 
 	packetforwardtypes "github.com/strangelove-ventures/packet-forward-middleware/v4/router/types"
 )
 
-// Returns "ujunox" if the chain is uni, else returns the standard ujuno token denom.
+// Returns "tubaobab" if the chain is baobab, else returns the standard ubaobab token denom.
 func GetChainsDenomToken(chainID string) string {
-	if strings.HasPrefix(chainID, "uni-") {
-		return "ujunox"
-	}
-	return "ujuno"
+// 	if strings.HasPrefix(chainID, "baobab-") {
+// 		return "tubaobab"
+// 	}
+	return "ubaobab"
 }
 
 func CreateV13UpgradeHandler(
@@ -46,7 +46,7 @@ func CreateV13UpgradeHandler(
 		nativeDenom := GetChainsDenomToken(ctx.ChainID())
 		logger.Info(fmt.Sprintf("With native denom %s", nativeDenom))
 
-		// ICA - https://github.com/CosmosContracts/juno/blob/integrate_ica_changes/app/app.go#L846-L885
+		// ICA - https://github.com/EZStaking/baobab/blob/integrate_ica_changes/app/app.go#L846-L885
 		vm[icatypes.ModuleName] = mm.Modules[icatypes.ModuleName].ConsensusVersion()
 		logger.Info("upgraded icatypes version")
 

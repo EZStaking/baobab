@@ -3,7 +3,7 @@ package juno.feeshare.v1;
 
 import "juno/feeshare/v1/feeshare.proto";
 import "gogoproto/gogo.proto";
-option go_package = "github.com/CosmosContracts/juno/x/feeshare/types";
+option go_package = "github.com/EZStaking/baobab/x/feeshare/types";
 
 // GenesisState defines the module's genesis state.
 message GenesisState {

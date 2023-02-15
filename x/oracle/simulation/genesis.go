@@ -6,7 +6,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/CosmosContracts/juno/v13/x/oracle/types"
+	"github.com/EZStaking/baobab/v13/x/oracle/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 )
@@ -118,13 +118,13 @@ func RandomizedGenState(simState *module.SimulationState) {
 			RewardBand:               rewardBand,
 			RewardDistributionWindow: rewardDistributionWindow,
 			Whitelist: types.DenomList{
-				{SymbolDenom: types.JunoSymbol, BaseDenom: types.JunoDenom},
+				{SymbolDenom: types.JunoSymbol, BaseDenom: types.Baobabdenom},
 			},
 			SlashFraction:     slashFraction,
 			SlashWindow:       slashWindow,
 			MinValidPerWindow: minValidPerWindow,
 			TwapTrackingList: types.DenomList{
-				{SymbolDenom: types.JunoSymbol, BaseDenom: types.JunoDenom},
+				{SymbolDenom: types.JunoSymbol, BaseDenom: types.Baobabdenom},
 			},
 			TwapDuration: TwapTrackingDuration,
 		},

@@ -5,7 +5,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/CosmosContracts/juno/price-feeder/oracle/provider"
+	"github.com/EZStaking/baobab/price-feeder/oracle/provider"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

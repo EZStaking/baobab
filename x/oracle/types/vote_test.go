@@ -22,31 +22,31 @@ func TestAggregateExchangeRatePrevoteString(t *testing.T) {
 func TestAggregateExchangeRateVoteString(t *testing.T) {
 	aggregateExchangeRatePreVote := NewAggregateExchangeRateVote(
 		ExchangeRateTuples{
-			NewExchangeRateTuple(JunoDenom, sdk.OneDec()),
+			NewExchangeRateTuple(Baobabdenom, sdk.OneDec()),
 		},
 		sdk.ValAddress(sdk.AccAddress([]byte("addr1_______________"))),
 	)
 
-	require.Equal(t, "exchange_rate_tuples:\n    - denom: ujuno\n      exchange_rate: \"1.000000000000000000\"\nvoter: cosmosvaloper1v9jxgu33ta047h6lta047h6lta047h6lre9k4r\n", aggregateExchangeRatePreVote.String())
+	require.Equal(t, "exchange_rate_tuples:\n    - denom: ubaobab\n      exchange_rate: \"1.000000000000000000\"\nvoter: cosmosvaloper1v9jxgu33ta047h6lta047h6lta047h6lre9k4r\n", aggregateExchangeRatePreVote.String())
 }
 
 func TestExchangeRateTuplesString(t *testing.T) {
-	exchangeRateTuple := NewExchangeRateTuple(JunoDenom, sdk.OneDec())
-	require.Equal(t, exchangeRateTuple.String(), "denom: ujuno\nexchange_rate: \"1.000000000000000000\"\n")
+	exchangeRateTuple := NewExchangeRateTuple(Baobabdenom, sdk.OneDec())
+	require.Equal(t, exchangeRateTuple.String(), "denom: ubaobab\nexchange_rate: \"1.000000000000000000\"\n")
 
 	exchangeRateTuples := ExchangeRateTuples{
 		exchangeRateTuple,
 		NewExchangeRateTuple(IbcDenomAtom, sdk.SmallestDec()),
 	}
-	require.Equal(t, "- denom: ujuno\n  exchange_rate: \"1.000000000000000000\"\n- denom: ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2\n  exchange_rate: \"0.000000000000000001\"\n", exchangeRateTuples.String())
+	require.Equal(t, "- denom: ubaobab\n  exchange_rate: \"1.000000000000000000\"\n- denom: ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2\n  exchange_rate: \"0.000000000000000001\"\n", exchangeRateTuples.String())
 }
 
 func TestParseExchangeRateTuples(t *testing.T) {
-	valid := "ujuno:123.0,uatom:123.123"
+	valid := "ubaobab:123.0,uatom:123.123"
 	_, err := ParseExchangeRateTuples(valid)
 	require.NoError(t, err)
 
-	duplicatedDenom := "ujuno:100.0,uatom:123.123,uatom:121233.123"
+	duplicatedDenom := "ubaobab:100.0,uatom:123.123,uatom:121233.123"
 	_, err = ParseExchangeRateTuples(duplicatedDenom)
 	require.Error(t, err)
 
@@ -54,19 +54,19 @@ func TestParseExchangeRateTuples(t *testing.T) {
 	_, err = ParseExchangeRateTuples(invalidCoins)
 	require.Error(t, err)
 
-	invalidCoinsWithValid := "ujuno:123.0,123.1"
+	invalidCoinsWithValid := "ubaobab:123.0,123.1"
 	_, err = ParseExchangeRateTuples(invalidCoinsWithValid)
 	require.Error(t, err)
 
-	zeroCoinsWithValid := "ujuno:0.0,uatom:123.1"
+	zeroCoinsWithValid := "ubaobab:0.0,uatom:123.1"
 	_, err = ParseExchangeRateTuples(zeroCoinsWithValid)
 	require.Error(t, err)
 
-	negativeCoinsWithValid := "ujuno:-1234.5,uatom:123.1"
+	negativeCoinsWithValid := "ubaobab:-1234.5,uatom:123.1"
 	_, err = ParseExchangeRateTuples(negativeCoinsWithValid)
 	require.Error(t, err)
 
-	multiplePricesPerRate := "ujuno:123: ujuno:456,uusdc:789"
+	multiplePricesPerRate := "ubaobab:123: ubaobab:456,uusdc:789"
 	_, err = ParseExchangeRateTuples(multiplePricesPerRate)
 	require.Error(t, err)
 

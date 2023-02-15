@@ -1,7 +1,7 @@
 package app
 
 import (
-	"github.com/CosmosContracts/juno/v13/app/params"
+	"github.com/EZStaking/baobab/v13/app/params"
 
 	"github.com/cosmos/cosmos-sdk/std"
 )

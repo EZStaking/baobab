@@ -7,8 +7,8 @@ import (
 	"github.com/stretchr/testify/suite"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
-	"github.com/CosmosContracts/juno/v13/app"
-	"github.com/CosmosContracts/juno/v13/x/mint/types"
+	"github.com/EZStaking/baobab/v13/app"
+	"github.com/EZStaking/baobab/v13/x/mint/types"
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )

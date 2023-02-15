@@ -7,7 +7,7 @@ set -uxe
 export GOPATH=~/go
 export PATH=$PATH:~/go/bin
 
-# Install Juno with pebbledb 
+# Install Juno with pebbledb
 go mod edit -replace github.com/tendermint/tm-db=github.com/notional-labs/tm-db@136c7b6
 go mod tidy
 go install -ldflags '-w -s -X github.com/cosmos/cosmos-sdk/types.DBBackend=pebbledb' -tags pebbledb ./...
@@ -18,12 +18,12 @@ go install -ldflags '-w -s -X github.com/cosmos/cosmos-sdk/types.DBBackend=pebbl
 # go install -ldflags '-w -s -X github.com/cosmos/cosmos-sdk/types.DBBackend=boltdb' -tags boltdb ./...
 
 # Initialize chain.
-junod init test
+baobabd init test
 
 # Get Genesis
 wget https://download.dimi.sh/juno-phoenix2-genesis.tar.gz
 tar -xvf juno-phoenix2-genesis.tar.gz
-mv juno-phoenix2-genesis.json "$HOME/.juno/config/genesis.json"
+mv juno-phoenix2-genesis.json "$HOME/.baobab/config/genesis.json"
 
 
 
@@ -39,15 +39,15 @@ echo "trust_height: $BLOCK_HEIGHT"
 echo "trust_hash: $TRUST_HASH"
 
 # Export state sync variables.
-export JUNOD_STATESYNC_ENABLE=true
-export JUNOD_P2P_MAX_NUM_OUTBOUND_PEERS=200
-export JUNOD_STATESYNC_RPC_SERVERS="https://rpc-juno-ia.notional.ventures:443,https://juno-rpc.polkachu.com:443"
-export JUNOD_STATESYNC_TRUST_HEIGHT=$BLOCK_HEIGHT
-export JUNOD_STATESYNC_TRUST_HASH=$TRUST_HASH
+export BAOBABD_STATESYNC_ENABLE=true
+export BAOBABD_P2P_MAX_NUM_OUTBOUND_PEERS=200
+export BAOBABD_STATESYNC_RPC_SERVERS="https://rpc-juno-ia.notional.ventures:443,https://juno-rpc.polkachu.com:443"
+export BAOBABD_STATESYNC_TRUST_HEIGHT=$BLOCK_HEIGHT
+export BAOBABD_STATESYNC_TRUST_HASH=$TRUST_HASH
 
 # Fetch and set list of seeds from chain registry.
-JUNOD_P2P_SEEDS="$(curl -s https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/chain.json | jq -r '[foreach .peers.seeds[] as $item (""; "\($item.id)@\($item.address)")] | join(",")')"
-export JUNOD_P2P_SEEDS
+BAOBABD_P2P_SEEDS="$(curl -s https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/chain.json | jq -r '[foreach .peers.seeds[] as $item (""; "\($item.id)@\($item.address)")] | join(",")')"
+export BAOBABD_P2P_SEEDS
 
 # Start chain.
-junod start --x-crisis-skip-assert-invariants --db_backend pebbledb
+baobabd start --x-crisis-skip-assert-invariants --db_backend pebbledb

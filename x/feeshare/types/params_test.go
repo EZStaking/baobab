@@ -20,7 +20,7 @@ func TestParamSetPairs(t *testing.T) {
 
 func TestParamsValidate(t *testing.T) {
 	devShares := sdk.NewDecWithPrec(60, 2)
-	acceptedDenoms := []string{"ujuno"}
+	acceptedDenoms := []string{"ubaobab"}
 
 	testCases := []struct {
 		name     string

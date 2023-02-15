@@ -3,7 +3,7 @@ package types_test
 import (
 	"testing"
 
-	"github.com/CosmosContracts/juno/v13/x/oracle/types"
+	"github.com/EZStaking/baobab/v13/x/oracle/types"
 	"github.com/stretchr/testify/require"
 )
 
@@ -14,7 +14,7 @@ func TestDenomString(t *testing.T) {
 	}{
 		{
 			denom:       types.DenomJuno,
-			expectedStr: "base_denom: ujuno\nsymbol_denom: JUNO\nexponent: 6\n",
+			expectedStr: "base_denom: ubaobab\nsymbol_denom: JUNO\nexponent: 6\n",
 		},
 		{
 			denom:       types.DenomLuna,
@@ -76,7 +76,7 @@ func TestDenomListString(t *testing.T) {
 	}{
 		{
 			denomList:   types.DenomList{types.DenomJuno},
-			expectedStr: "base_denom: ujuno\nsymbol_denom: JUNO\nexponent: 6",
+			expectedStr: "base_denom: ubaobab\nsymbol_denom: JUNO\nexponent: 6",
 		},
 		{
 			denomList:   types.DenomList{types.DenomAtom, types.DenomLuna},

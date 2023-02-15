@@ -15,10 +15,10 @@ import (
 	tmrand "github.com/tendermint/tendermint/libs/rand"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
-	app "github.com/CosmosContracts/juno/v13/app"
-	appparams "github.com/CosmosContracts/juno/v13/app/params"
-	"github.com/CosmosContracts/juno/v13/x/oracle"
-	"github.com/CosmosContracts/juno/v13/x/oracle/types"
+	app "github.com/EZStaking/baobab/v13/app"
+	appparams "github.com/EZStaking/baobab/v13/app/params"
+	"github.com/EZStaking/baobab/v13/x/oracle"
+	"github.com/EZStaking/baobab/v13/x/oracle/types"
 )
 
 const (

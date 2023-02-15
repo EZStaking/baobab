@@ -37,10 +37,10 @@ cd ./juno/price-feeder
 make install
 
 # Copy config to your location for future use & editing
-cp config.example.toml $HOME/.juno/oracle-config.toml
+cp config.example.toml $HOME/.baobab/oracle-config.toml
 
-# If you get `cp: cannot create regular file '$HOME/.juno/oracle-config.toml': No such file or directory`, 
-# run: `junod init [moniker]`. Then run the cp command again
+# If you get `cp: cannot create regular file '$HOME/.baobab/oracle-config.toml': No such file or directory`, 
+# run: `baobabd init [moniker]`. Then run the cp command again
 
 price-feeder version # sdk: v0.45.11 and go1.19.*
 # If it is not found, your go path is not set
@@ -88,15 +88,15 @@ cd pricefeeder
 make install
 
 # Setup price feeder config
-cp $HOME/juno/price-feeder/config.example.toml $HOME/.juno/oracle-config.toml
+cp $HOME/juno/price-feeder/config.example.toml $HOME/.baobab/oracle-config.toml
 
 sed -i \
-'s/0.0001stake/0.025ujuno/g;
+'s/0.0001stake/0.025ubaobab/g;
  s/address = "juno1w20tfhnehc33rgtm9tg8gdtea0svn7twfnyqee"/address = "'"$FEEDER_ADDR"'"/g;
  s/validator = "junovaloper1w20tfhnehc33rgtm9tg8gdtea0svn7twkwj0zq"/validator = "'"$VALOPER_ADDR"'"/g;
  s/chain_id = "test-1"/chain_id = "'"$CHAIN_ID"'"/g;
  s/"chain_id", "test-1"/"chain_id", "'"$CHAIN_ID"'"/g' \
-$HOME/.juno/oracle-config.toml
+$HOME/.baobab/oracle-config.toml
 
 
 # Setup systemd service
@@ -107,7 +107,7 @@ After=network.target
 [Service]
 Type=simple
 User=$USER
-ExecStart=$HOME/go/bin/price-feeder $HOME/.juno/oracle-config.toml --log-level debug
+ExecStart=$HOME/go/bin/price-feeder $HOME/.baobab/oracle-config.toml --log-level debug
 Restart=on-abort
 LimitNOFILE=65535
 Environment=\"PRICE_FEEDER_PASS=$KEYRING_PASS\"
@@ -176,8 +176,8 @@ docker build -f ./price-feeder/price-feeder.Dockerfile -t price-feeder .
 # network host allows us to query the host machine RPC (https://localhost:26657)
 docker run -d --name price-feeder \
     -e PRICE_FEEDER_PASS="mypass" \
-    -v /root/.juno/keyring-test:/root/.juno/keyring-test:ro \
-    --mount type=bind,source=/root/.juno/oracle-config.toml,target=/oracle-config.toml,readonly \
+    -v /root/.baobab/keyring-test:/root/.baobab/keyring-test:ro \
+    --mount type=bind,source=/root/.baobab/oracle-config.toml,target=/oracle-config.toml,readonly \
     --network="host" \
     price-feeder /oracle-config.toml
 ```

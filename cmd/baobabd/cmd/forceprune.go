@@ -3,7 +3,7 @@ package cmd
 // DONTCOVER
 
 // from osmosis
-// https://github.com/osmosis-labs/osmosis/blob/main/cmd/junod/cmd/forceprune.go
+// https://github.com/osmosis-labs/osmosis/blob/main/cmd/baobabd/cmd/forceprune.go
 
 import (
 	"fmt"
@@ -36,8 +36,8 @@ const (
 func forceprune() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "forceprune",
-		Short: "Example junod debug forceprune -f 188000 -m 1000, which would keep blockchain and state data of last 188000 blocks (approximately 2 weeks) and ABCI responses of last 1000 blocks.",
-		Long:  "Forceprune options prunes and compacts blockstore.db and state.db. One needs to shut down chain before running forceprune. By default it keeps last 188000 blocks (approximately 2 weeks of data) blockstore and state db (validator and consensus information) and 1000 blocks of abci responses from state.db. Everything beyond these heights in blockstore and state.db is pruned. ABCI Responses are stored in index db and so redundant especially if one is running pruned nodes. As a result we are removing ABCI data from state.db aggressively by default. One can override height for blockstore.db and state.db by using -f option and for abci response by using -m option. Example junod forceprune -f 188000 -m 1000.",
+		Short: "Example baobabd debug forceprune -f 188000 -m 1000, which would keep blockchain and state data of last 188000 blocks (approximately 2 weeks) and ABCI responses of last 1000 blocks.",
+		Long:  "Forceprune options prunes and compacts blockstore.db and state.db. One needs to shut down chain before running forceprune. By default it keeps last 188000 blocks (approximately 2 weeks of data) blockstore and state db (validator and consensus information) and 1000 blocks of abci responses from state.db. Everything beyond these heights in blockstore and state.db is pruned. ABCI Responses are stored in index db and so redundant especially if one is running pruned nodes. As a result we are removing ABCI data from state.db aggressively by default. One can override height for blockstore.db and state.db by using -f option and for abci response by using -m option. Example baobabd forceprune -f 188000 -m 1000.",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			fullHeightFlag, err := cmd.Flags().GetString(fullHeight)
 			if err != nil {
@@ -53,7 +53,7 @@ func forceprune() *cobra.Command {
 			conf := config.DefaultConfig()
 			dbPath := clientCtx.HomeDir + "/" + conf.DBPath
 
-			cmdr := exec.Command("junod", "status")
+			cmdr := exec.Command("baobabd", "status")
 			err = cmdr.Run()
 
 			if err == nil {

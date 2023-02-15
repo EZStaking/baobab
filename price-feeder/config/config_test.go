@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/CosmosContracts/juno/price-feeder/config"
-	"github.com/CosmosContracts/juno/price-feeder/oracle/provider"
+	"github.com/EZStaking/baobab/price-feeder/config"
+	"github.com/EZStaking/baobab/price-feeder/oracle/provider"
 	"github.com/cosmos/cosmos-sdk/telemetry"
 	"github.com/rs/zerolog"
 	"github.com/stretchr/testify/require"
@@ -30,7 +30,7 @@ func TestValidate(t *testing.T) {
 			},
 			Keyring: config.Keyring{
 				Backend: "test",
-				Dir:     "/Users/username/.juno",
+				Dir:     "/Users/username/.baobab",
 			},
 			RPC: config.RPC{
 				TMRPCEndpoint: "http://localhost:26657",
@@ -180,7 +180,7 @@ validator = "junovaloper15x87cdlt9ed0xhgtsdutdec3njg42q3a63c3j2"
 
 [keyring]
 backend = "test"
-dir = "/Users/username/.juno"
+dir = "/Users/username/.baobab"
 pass = "keyringPassword"
 
 [rpc]
@@ -263,7 +263,7 @@ validator = "junovaloper15x87cdlt9ed0xhgtsdutdec3njg42q3a63c3j2"
 
 [keyring]
 backend = "test"
-dir = "/Users/username/.juno"
+dir = "/Users/username/.baobab"
 pass = "keyringPassword"
 
 [rpc]
@@ -411,7 +411,7 @@ validator = "junovaloper15x87cdlt9ed0xhgtsdutdec3njg42q3a63c3j2"
 
 [keyring]
 backend = "test"
-dir = "/Users/username/.JUNO"
+dir = "/Users/username/.BAOBAB"
 pass = "keyringPassword"
 
 [rpc]
@@ -506,7 +506,7 @@ validator = "junovaloper15x87cdlt9ed0xhgtsdutdec3njg42q3a63c3j2"
 
 [keyring]
 backend = "test"
-dir = "/Users/username/.JUNO"
+dir = "/Users/username/.BAOBAB"
 pass = "keyringPassword"
 
 [rpc]
@@ -578,7 +578,7 @@ validator = "junovaloper15x87cdlt9ed0xhgtsdutdec3njg42q3a63c3j2"
 
 [keyring]
 backend = "test"
-dir = "/Users/username/.JUNO"
+dir = "/Users/username/.BAOBAB"
 pass = "keyringPassword"
 
 [rpc]
@@ -667,7 +667,7 @@ validator = "junovaloper15x87cdlt9ed0xhgtsdutdec3njg42q3a63c3j2"
 
 [keyring]
 backend = "test"
-dir = "/Users/username/.JUNO"
+dir = "/Users/username/.BAOBAB"
 pass = "keyringPassword"
 
 [rpc]
@@ -735,7 +735,7 @@ validator = "junovaloper15x87cdlt9ed0xhgtsdutdec3njg42q3a63c3j2"
 
 [keyring]
 backend = "test"
-dir = "/Users/username/.JUNO"
+dir = "/Users/username/.BAOBAB"
 pass = "keyringPassword"
 
 [rpc]

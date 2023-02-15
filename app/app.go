@@ -6,8 +6,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/CosmosContracts/juno/v13/app/openapiconsole"
-	"github.com/CosmosContracts/juno/v13/docs"
+	"github.com/EZStaking/baobab/v13/app/openapiconsole"
+	"github.com/EZStaking/baobab/v13/docs"
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/grpc/tmservice"
@@ -48,25 +48,25 @@ import (
 	wasmkeeper "github.com/CosmWasm/wasmd/x/wasm/keeper"
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/CosmosContracts/juno/v13/app/keepers"
-	encparams "github.com/CosmosContracts/juno/v13/app/params"
-	upgrades "github.com/CosmosContracts/juno/v13/app/upgrades"
-	v10 "github.com/CosmosContracts/juno/v13/app/upgrades/v10"
-	v11 "github.com/CosmosContracts/juno/v13/app/upgrades/v11"
-	v12 "github.com/CosmosContracts/juno/v13/app/upgrades/v12"
-	v13 "github.com/CosmosContracts/juno/v13/app/upgrades/v13"
-	oracleclient "github.com/CosmosContracts/juno/v13/x/oracle/client"
+	"github.com/EZStaking/baobab/v13/app/keepers"
+	encparams "github.com/EZStaking/baobab/v13/app/params"
+	upgrades "github.com/EZStaking/baobab/v13/app/upgrades"
+	v10 "github.com/EZStaking/baobab/v13/app/upgrades/v10"
+	v11 "github.com/EZStaking/baobab/v13/app/upgrades/v11"
+	v12 "github.com/EZStaking/baobab/v13/app/upgrades/v12"
+	v13 "github.com/EZStaking/baobab/v13/app/upgrades/v13"
+	oracleclient "github.com/EZStaking/baobab/v13/x/oracle/client"
 )
 
 const (
-	AccountAddressPrefix = "juno"
-	Name                 = "juno"
+	AccountAddressPrefix = "baobab"
+	Name                 = "baobab"
 )
 
 // We pull these out so we can set them with LDFLAGS in the Makefile
 var (
-	NodeDir      = ".juno"
-	Bech32Prefix = "juno"
+	NodeDir      = ".baobab"
+	Bech32Prefix = "baobab"
 
 	// If EnabledSpecificProposals is "", and this is "true", then enable all x/wasm proposals.
 	// If EnabledSpecificProposals is "", and this is not "true", then disable all x/wasm proposals.
@@ -83,7 +83,7 @@ var (
 // These are the ones we will want to use in the code, based on
 // any overrides above
 var (
-	// DefaultNodeHome default home directories for Juno
+	// DefaultNodeHome default home directories for Baobab
 	DefaultNodeHome = os.ExpandEnv("$HOME/") + NodeDir
 
 	// Bech32PrefixAccAddr defines the Bech32 prefix of an account's address

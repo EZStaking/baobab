@@ -1,6 +1,6 @@
 gas_adjustment = 1.5
 provider_min_override = true
-gas_price = "0.0001ujuno"
+gas_price = "0.0001ubaobab"
 fee_grant_address = ""
 
 [server]
@@ -89,7 +89,7 @@ quote = "USDT"
 
 [keyring]
 backend = "test"
-dir = "/.juno"
+dir = "/.baobab"
 
 [rpc]
 grpc_endpoint = "juno-test-a-node-prune-default-snapshot-state-sync-from:9090"

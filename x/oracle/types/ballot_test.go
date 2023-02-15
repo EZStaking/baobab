@@ -20,19 +20,19 @@ func TestToMap(t *testing.T) {
 		[]VoteForTally{
 			{
 				Voter:        sdk.ValAddress(secp256k1.GenPrivKey().PubKey().Address()),
-				Denom:        JunoDenom,
+				Denom:        Baobabdenom,
 				ExchangeRate: sdk.NewDec(1600),
 				Power:        100,
 			},
 			{
 				Voter:        sdk.ValAddress(secp256k1.GenPrivKey().PubKey().Address()),
-				Denom:        JunoDenom,
+				Denom:        Baobabdenom,
 				ExchangeRate: sdk.ZeroDec(),
 				Power:        100,
 			},
 			{
 				Voter:        sdk.ValAddress(secp256k1.GenPrivKey().PubKey().Address()),
-				Denom:        JunoDenom,
+				Denom:        Baobabdenom,
 				ExchangeRate: sdk.NewDec(1500),
 				Power:        100,
 			},
@@ -76,7 +76,7 @@ func TestPBPower(t *testing.T) {
 		power := sk.Validator(ctx, valAccAddrs[i]).GetConsensusPower(sdk.DefaultPowerReduction)
 		vote := NewVoteForTally(
 			sdk.ZeroDec(),
-			JunoDenom,
+			Baobabdenom,
 			valAccAddrs[i],
 			power,
 		)
@@ -94,7 +94,7 @@ func TestPBPower(t *testing.T) {
 	faceValAddr := sdk.ValAddress(pubKey.Address())
 	fakeVote := NewVoteForTally(
 		sdk.OneDec(),
-		JunoDenom,
+		Baobabdenom,
 		faceValAddr,
 		0,
 	)
@@ -165,7 +165,7 @@ func TestPBWeightedMedian(t *testing.T) {
 
 			vote := NewVoteForTally(
 				sdk.NewDec(input),
-				JunoDenom,
+				Baobabdenom,
 				valAddr,
 				power,
 			)
@@ -249,7 +249,7 @@ func TestPBStandardDeviation(t *testing.T) {
 
 			vote := NewVoteForTally(
 				input,
-				JunoDenom,
+				Baobabdenom,
 				valAddr,
 				power,
 			)
@@ -312,10 +312,10 @@ func TestBallotMapToSlice(t *testing.T) {
 	}
 
 	ballotSlice := BallotMapToSlice(map[string]ExchangeRateBallot{
-		JunoDenom:    pb,
+		Baobabdenom:    pb,
 		IbcDenomAtom: pb,
 	})
-	require.Equal(t, []BallotDenom{{Ballot: pb, Denom: IbcDenomAtom}, {Ballot: pb, Denom: JunoDenom}}, ballotSlice)
+	require.Equal(t, []BallotDenom{{Ballot: pb, Denom: IbcDenomAtom}, {Ballot: pb, Denom: Baobabdenom}}, ballotSlice)
 }
 
 func TestExchangeRateBallotSwap(t *testing.T) {

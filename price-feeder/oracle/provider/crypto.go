@@ -10,11 +10,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/CosmosContracts/juno/price-feeder/oracle/types"
+	"github.com/EZStaking/baobab/price-feeder/oracle/types"
 	"github.com/gorilla/websocket"
 	"github.com/rs/zerolog"
 
-	"github.com/CosmosContracts/juno/price-feeder/oracle/util"
+	"github.com/EZStaking/baobab/price-feeder/oracle/util"
 )
 
 const (
